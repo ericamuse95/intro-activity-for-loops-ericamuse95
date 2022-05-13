@@ -1,5 +1,7 @@
 package com.kenzie.app;
 
+import java.util.Arrays;
+
 public class Main {
     /***********************/
     /* For Loops           */
@@ -14,9 +16,14 @@ public class Main {
         //
         // Write your code here
 
-        for (int index = 0; index < 2; index++) {
-            System.out.println(index);
+
+        for (int index = 0; index < 10; index++) {
+            System.out.print(index);
+            System.out.print(" ");
         }
+        System.out.println();
+
+
 
     }
 
@@ -29,6 +36,11 @@ public class Main {
         //   (This should include the number 20, but not include the number 0)
         //
         // Write your code here
+        for (int index = 1; index <= 20; index++){
+            System.out.print(index);
+            System.out.print(" ");
+        }
+        System.out.println();
 
 
     }
@@ -42,6 +54,11 @@ public class Main {
         //   (This should include the number 20, and the number 2, but not include the number 0)
         //
         // Write your code here
+        for(int index =2; index <= 20; index=index+2){
+            System.out.print(index);
+            System.out.print(" ");
+        }
+        System.out.println();
 
 
 
@@ -51,7 +68,7 @@ public class Main {
         // The following exercises will use the numbers array below
         // - First fix this int array to have the proper syntax for declaring an array
 
-        // int numbers = [22, 15, 10, 19, 36, 2, 5, 20];
+        int[] numbers = {22,15, 10, 19, 36, 2, 5, 20};
 
         // ----------------------------------------------------------------------------------------------
         System.out.println("Exercise Four");
@@ -59,6 +76,11 @@ public class Main {
         // - Have your loop iterate through every number in the numbers array, printing the number to the console.
         //
         // Write your code here
+        for(int index = 0; index < numbers.length; index++){
+            System.out.print(numbers[index]);
+            System.out.print(" ");
+        }
+        System.out.println();
 
 
 
@@ -72,6 +94,17 @@ public class Main {
         //
         // Write your code here
         int [] numbers = {22, 15, 10, 19, 36, 2, 5, 20};
+        int twenty = 20;
+
+        for(int index = 0; index < numbers.length; index++){
+            if(numbers[index] < twenty){
+                System.out.print(numbers[index]);
+                System.out.print(" ");
+            }
+
+
+        }
+        System.out.println();
 
 
     }
@@ -86,7 +119,18 @@ public class Main {
         // Write your code here
         int [] numbers = {22, 15, 10, 19, 36, 2, 5, 20};
 
+        int result = 1;
+
+        for(int i = 0; i < numbers.length; i++){
+        // 1 * 22 = 22 * 15 * 10 etc etc etc
+        result *= numbers[i];
+
+        }
+        System.out.print(result);
+        System.out.println();
+
     }
+
     public static void exerciseSeven(){
         // ----------------------------------------------------------------------------------------------
         System.out.println("Exercise Seven");
@@ -97,6 +141,26 @@ public class Main {
         //
         // Write your code here
         int [] numbers = {22, 15, 10, 19, 36, 2, 5, 20};
+
+        //create variable that will hold the first int in the array
+        int maxNumber = numbers[0];
+
+        //iterate through array
+        for(int i = 0; i < numbers.length; i++)
+        {
+            //is number at this index larger than the number at index 0
+            if(numbers[i] > maxNumber){
+                //if so store number in maxNumber
+                maxNumber = numbers[i];
+            }
+
+            //System.out.println(maxNumber);
+        }
+        System.out.print(maxNumber);
+
+        System.out.println();
+
+
 
 
     }
@@ -111,6 +175,28 @@ public class Main {
         // Note: check out the Arrays.toString() method!
         // Write your code here
         int [] numbers = {22, 15, 10, 19, 36, 2, 5, 20};
+        //first loop through array to get size of the second array
+        int sizeOfNewArray = 0;
+        for(int index=0; index < numbers.length; index++){
+            //look for numbers in array equal to or greater than 10
+            if (numbers[index] >= 10){
+                sizeOfNewArray++;
+            }
+        }
+        //second loop searches through original array
+        int[] greaterThanOrEqual10 = new int[sizeOfNewArray];
+        //need counter for this array
+        int newIndex = 0;
+        for(int index=0; index < numbers.length; index++){
+            //find numbers >= 10
+            if(numbers[index] >= 10){
+                greaterThanOrEqual10[newIndex] = numbers[index];
+                newIndex++;
+            }
+        }
+        System.out.print(Arrays.toString(greaterThanOrEqual10));
+
+        System.out.println();
 
 
 
